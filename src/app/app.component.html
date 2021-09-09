@@ -1,0 +1,12 @@
+<div style="text-align:center">
+<h1>Bem Vindo {{ title }}</h1>
+<img width="150" alt="Logo" src="https://www.aboz.org.br/img/odontologia/odontologia-1.jpg">
+</div>
+<div class="container">
+<button (click)="Listar()" class="btn btn-info" style="margin-bottom: 10px; margin-left: 5px;">Clientes</button>
+<button (click)="ListarServico()" class="btn btn-info" style="margin-bottom: 10px; margin-left: 5px;">Serviços</button>
+<button (click)="Listar()" class="btn btn-info" style="margin-bottom: 10px; margin-left: 5px;">Atendimentos</button>
+<button (click)="Listar()" class="btn btn-info" style="margin-bottom: 10px; margin-left: 5px;">Relatórios</button>
+</div>
+
+<router-outlet></router-outlet>

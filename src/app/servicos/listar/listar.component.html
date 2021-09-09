@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Lista de Serviços Cadastrados</h3>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>DESCRIÇÃO</th>
+                        <th>VALOR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let servico of servicos" class="text-center">
+                        <td>{{servico.id}}</td>
+                        <td>{{servico.descricao}}</td>
+                        <td>{{servico.valor}}</td>
+                        <td>
+                            <button (click)="Editar(servico)" class="btn btn-warning">Editar</button>
+                            <button (click)="Excluir(servico)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <h5 style="margin-top: 10px;">CLIQUE NO BOTÃO PARA CADASTRAR UM NOVO SERVIÇO</h5>
+                    <button (click)="NovoServico()" class="btn btn-info" style="margin-bottom: 10px;">Novo</button>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
