@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pessoa } from 'src/app/model/Pessoa';
+import { Cliente } from 'src/app/model/Cliente';
 import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class EditComponent implements OnInit {
 
-  pessoa: Pessoa = new Pessoa();
+  cliente: Cliente = new Cliente();
 
   constructor(private router:Router,private service:ServiceService) { }
 
@@ -21,17 +21,17 @@ export class EditComponent implements OnInit {
   
   Editar(){
     let id=localStorage.getItem("id");
-    this.service.getPessoaId(parseInt(""+id))
+    this.service.getClienteId(parseInt(""+id))
     .subscribe(data=>{
-      this.pessoa=data;
+      this.cliente=data;
     })
 
   }
 
-  Atualizar(pessoa:Pessoa){
-    this.service.updatePessoa(pessoa)
+  Atualizar(cliente:Cliente){
+    this.service.updateCliente(cliente)
     .subscribe(data=> {
-      this.pessoa = data;
+      this.cliente = data;
       alert("Dados Atualizados com Sucesso!");
       this.router.navigate(["listar"]);
     })

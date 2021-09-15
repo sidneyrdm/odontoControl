@@ -17,4 +17,13 @@ export class AppComponent {
   ListarServico(){
     this.router.navigate(["listaServico"]);
   }
+
+  ListarAtendimentos(){
+    this.router.navigate(["ListarAtendimentos"]);
+  }
+
+  ListarRelatorios(){
+    alert('Vai te levar para a página de relatórios');
+  }
+  
 }

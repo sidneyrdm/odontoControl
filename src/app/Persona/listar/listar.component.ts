@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pessoa } from 'src/app/model/Pessoa';
+import { Cliente } from 'src/app/model/Cliente';
 import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
@@ -10,19 +10,19 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class ListarComponent implements OnInit {
 
- 'pessoas':Pessoa[];
+ 'clientes':Cliente[];
 
   constructor(private service:ServiceService, private router:Router) { }
 
   ngOnInit(): void {
-    this.service.getPessoas()
+    this.service.getClientes()
     .subscribe(data =>{
-      this.pessoas = data;
+      this.clientes = data;
     })
   }
 
-  Editar(pessoa:Pessoa){
-    localStorage.setItem("id", pessoa.id.toString());
+  Editar(cliente:Cliente){
+    localStorage.setItem("id", cliente.id.toString());
     this.router.navigate(["edit"]);
   }
 
@@ -30,11 +30,11 @@ export class ListarComponent implements OnInit {
     this.router.navigate(["add"]);
   }
 
-  Deletar(pessoa:Pessoa){
-    this.service.deletePessoa(pessoa)
+  Deletar(cliente:Cliente){
+    this.service.deleteCliente(cliente)
     .subscribe(data=> {
-      this.pessoas = this.pessoas.filter(p=> p !== pessoa);
-      alert("Cliente "+pessoa.nome+" Deletado Com Sucesso!");
+      this.clientes = this.clientes.filter(p=> p !== cliente);
+      alert("Cliente "+cliente.nome+" Deletado Com Sucesso!");
     })
   }
 

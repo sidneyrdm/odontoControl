@@ -15,13 +15,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let pessoa of pessoas" class="text-center">
-                        <td>{{pessoa.id}}</td>
-                        <td>{{pessoa.nome}}</td>
-                        <td>{{pessoa.apelido}}</td>
+                    <tr *ngFor="let cliente of clientes" class="text-center">
+                        <td>{{cliente.id}}</td>
+                        <td>{{cliente.nome}}</td>
+                        <td>{{cliente.telefone}}</td>
                         <td>
-                            <button (click)="Editar(pessoa)" class="btn btn-warning">Editar</button>
-                            <button (click)="Deletar(pessoa)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                            <button (click)="Editar(cliente)" class="btn btn-warning">Editar</button>
+                            <button (click)="Deletar(cliente)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
                         </td>
                     </tr>
                 </tbody>

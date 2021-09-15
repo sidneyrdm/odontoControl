@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pessoa } from 'src/app/model/Pessoa';
+import { Cliente } from 'src/app/model/Cliente';
 import { ServiceService } from 'src/app/Service/service.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 })
 export class AddComponent implements OnInit {
 
-  pessoa: Pessoa = new Pessoa();
+  cliente: Cliente = new Cliente();
 
   constructor(private router:Router, private service:ServiceService) { }
 
@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
   }
 
   Salvar(){
-    this.service.createPessoa(this.pessoa)
+    this.service.createCliente(this.cliente)
     .subscribe(data=> {
       alert("Cliente Cadastrado com Sucesso!");
       this.router.navigate(["listar"]);

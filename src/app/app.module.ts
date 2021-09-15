@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { ServiceService } from './Service/service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListaServicosComponent } from './servicos/lista-servicos/lista-servicos.component';
+import { AdicionaservicoComponent } from './servicos/adicionaservico/adicionaservico.component';
+import { EditaServicoComponent } from './servicos/edita-servico/edita-servico.component';
+import { ListarAtendimentoComponent } from './Atendimentos/listar-atendimento/listar-atendimento.component';
+import { AdicionarAtendimentoComponent } from './Atendimentos/adicionar-atendimento/adicionar-atendimento.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { ListaServicosComponent } from './servicos/lista-servicos/lista-servicos
     ListarComponent,
     AddComponent,
     EditComponent,
-    ListaServicosComponent
+    ListaServicosComponent,
+    AdicionaservicoComponent,
+    EditaServicoComponent,
+    ListarAtendimentoComponent,
+    AdicionarAtendimentoComponent
   ],
   imports: [
     BrowserModule,

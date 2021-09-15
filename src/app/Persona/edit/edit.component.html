@@ -1,19 +1,19 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h3>Editar Dados da Pessoa</h3>
+            <h3>Editar Dados do Cliente</h3>
         </div>
         <div class="card-body">
             <form action="">
                 <div class="form-group">
                     <label for="">Nome.:</label>
-                    <input [(ngModel)]="pessoa.nome" name="nome" type="text" class="form-control">
+                    <input [(ngModel)]="cliente.nome" name="nome" type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="">Apelido.:</label>
-                    <input [(ngModel)]="pessoa.apelido" name="apelido" type="text" class="form-control">
+                    <label for="">Telefone.:</label>
+                    <input [(ngModel)]="cliente.telefone" name="telefone" type="text" class="form-control">
                 </div>
-                <button (click)="Atualizar(pessoa)" style="margin-top: 10px;" class="btn btn-danger">Salvar</button>
+                <button (click)="Atualizar(cliente)" style="margin-top: 10px;" class="btn btn-danger">Salvar</button>
             </form>
         </div>
     </div>

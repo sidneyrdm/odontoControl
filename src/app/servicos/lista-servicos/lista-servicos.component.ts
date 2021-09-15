@@ -22,15 +22,20 @@ export class ListaServicosComponent implements OnInit {
     })
   }
 
-  Editar(servico: Servico) {
-    alert("o serviço "+servico.descricao+" será editado!");
+  Editar(servico:Servico){
+    localStorage.setItem("id", servico.id.toString());
+    this.router.navigate(["edita-servico"]);
   }
 
-  Excluir(servico: Servico) {
-    alert("o serviço "+servico.descricao+" será excluído!");
+  Deletar(servico:Servico){
+    this.service.deleteServico(servico)
+    .subscribe(data=> {
+      this.servicos = this.servicos.filter(p=> p !== servico);
+      alert("Serviço "+servico.descricao+" Deletado Com Sucesso!");
+    })
   }
 
   NovoServico(){
-    alert("Cadastrar um novo Serviço");
+    this.router.navigate(["adicionaservico"]);
   }
 }

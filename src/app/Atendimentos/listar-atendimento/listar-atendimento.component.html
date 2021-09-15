@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Lista de Atendimentos</h3>
+        </div>
+
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>CÓDIGO</th>
+                        <th>NOME DO CLIENTE</th>
+                        <th>DATA DO ATENDIMENTO</th>
+                        <th>VALOR</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let atendimento of atendimentos" class="text-center">
+                        <td>{{atendimento.id}}</td>
+                        <td>{{atendimento.nomeCliente}}</td>
+                        <td>{{atendimento.data}}</td>
+                        <td>R$ {{atendimento.valor}}</td>
+                        <td>
+                            <button (click)="EditarAtendimento(atendimento)" class="btn btn-warning">Editar</button>
+                            <button (click)="DeletarAtendimento(atendimento)" class="btn btn-danger" style="margin-left: 10px;">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <h5 style="margin-top: 10px;">CLIQUE NO BOTÃO PARA CADASTRAR UM NOVO ATENDIMENTO</h5>
+                    <button (click)="NovoAtendimento()" class="btn btn-info" style="margin-bottom: 10px;">Novo</button>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
